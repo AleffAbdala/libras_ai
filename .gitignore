@@ -1,0 +1,42 @@
+# Python environment
+venv/
+.venv/
+env/
+.Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local settings and secrets
+.env
+.env.*
+
+# Data artifacts (keep only folders/metadata if needed)
+data/raw/
+data/processed/
+*.npy
+*.npz
+
+# Model and training artifacts
+models/checkpoints/
+*.h5
+*.keras
+*.ckpt
+*.ckpt.*
+events.out.tfevents*
+
+# Temporary/backup files
+*.log
+*.tmp
+*.bak
+*.save
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
