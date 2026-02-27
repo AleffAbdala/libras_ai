@@ -145,10 +145,5 @@ Pressione `Q` para sair.
 
 ---
 
-## Licenca
-Defina a licenca que voce prefere (ex.: MIT, Apache-2.0).
-
----
-
 ## Autor
-Seu Nome - seu email / LinkedIn / GitHub
+Aleff Arantes Abdala Azevedo
