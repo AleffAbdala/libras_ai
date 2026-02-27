@@ -136,13 +136,22 @@ while True:
             # se houver mismatch, não adiciona (evita quebrar)
             cv2.putText(frame, "Feature mismatch!", (20, 140),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+    else:
+        # sem mão detectada: limpa estado para não manter gesto antigo na tela
+        sequence.clear()
+        pred_buffer.clear()
+        current_gesture = "Desconhecido"
+        current_confidence = 0.0
+        candidate_gesture = None
+        candidate_count = 0
+        weak_current_count = 0
 
     # =========================
     # PREDIÇÃO
     # =========================
     frame_count += 1
 
-    if len(sequence) == SEQUENCE_LENGTH and frame_count % PREDICT_EVERY_N_FRAMES == 0:
+    if feats is not None and len(sequence) == SEQUENCE_LENGTH and frame_count % PREDICT_EVERY_N_FRAMES == 0:
         input_data = np.array(sequence, dtype=np.float32)  # (seq_len, features)
         input_data = input_data.reshape(1, SEQUENCE_LENGTH, MODEL_EXPECTED_FEATURES)
 
