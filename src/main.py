@@ -60,7 +60,7 @@ label_to_idx = {k: v for k, v in labels.items()}
 # =========================
 # CARREGA MODELO
 # =========================
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 print(f"✅ Modelo carregado: {MODEL_PATH}")
 
 # detecta automaticamente quantas features o modelo espera
